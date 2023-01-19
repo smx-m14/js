@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Comprovació que estem amb root
+if [ "$(id -u)" != "0" ]; then
+   echo "Aquest programa s'ha d'executar amb l'usuari root" 1>&2;
+   exit 1;
+fi
+
+
 # Comprovacions prèvies
 sudo apt update > /dev/null 2> /dev/null;
 sudo apt install dialog gcc make net-tools -y > /dev/null 2> /dev/null;
@@ -30,11 +37,6 @@ askPassword() {
 # Variables globals
 userPass="Thos123!";
 
-# Comprovació que estem amb root
-if [ "$(id -u)" != "0" ]; then
-   echo "Aquest programa s'ha d'executar amb l'usuari root" 1>&2;
-   exit 1;
-fi
 
 exitCode1=1;
 while [[ $exitCode1 -ne 0 ]]
