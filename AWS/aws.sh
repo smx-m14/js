@@ -36,7 +36,13 @@ if [ "$(id -u)" != "0" ]; then
    exit 1;
 fi
 
-askPassword();
+exitCode1=1;
+while [[ $exitCode1 -ne 0 ]]
+do
+   askPassword;
+done
+
+echo $userPass;
 
 # Demanar password per la màquina
 #echo "root:$userPass" | chpasswd;
