@@ -13,7 +13,7 @@ function randomBetween(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function randomBetween(text) {
+function randomIn(text) {
     min = 0;
     max = text.length - 1;
     pos = Math.floor(Math.random() * (max - min + 1) + min);
