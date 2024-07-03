@@ -1,0 +1,28 @@
+* {
+    font-family: 'Roboto Mono', monospace;
+}
+
+body {
+    background-color: #333;
+    color: white;
+    margin: 20px;
+}
+#logger {
+    border: 1px solid white;
+    padding: 20px;
+    position: fixed;
+    top: 130px; 
+    bottom: 50px;
+    left: 20px;
+    right: 20px;
+    background-color: #222;
+    padding: 10px;
+    overflow: scroll;
+    line-height: 150%;
+}
+
+.log-boolean,
+.log-undefined {color: magenta;}
+.log-object,
+.log-string {color: orange;}
+.log-number {color: cyan;}
