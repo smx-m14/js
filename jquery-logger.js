@@ -12,6 +12,26 @@
 });
 
 
+// Add the insert method to the Array prototype
+Array.prototype.insert = function(position, element) {
+    // Check if the position is valid
+    if (position >= 0 && position <= this.length) {
+        this.splice(position, 0, element);
+    } else {
+        console.error("Index out of bounds");
+    }
+};
+
+// Add the remove method to the Array prototype
+Array.prototype.remove = function(position) {
+    // Check if the position is valid
+    if (position >= 0 && position < this.length) {
+        this.splice(position, 1);
+    } else {
+        console.error("Index out of bounds");
+    }
+};
+
 $.fn.nval = function () {
     return Number(this.val())
 };
