@@ -79,6 +79,16 @@ $.fn.shuffle = function () {
 };
 
 
+Array.prototype.shuffle = function() {
+    let array = this;
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1)); // Elige un índice aleatorio
+        [array[i], array[j]] = [array[j], array[i]]; // Intercambia los elementos
+    }
+    return array; // Devuelve el array reordenado
+};
+
+
 $(function () {
     (function (logger) {
         console.old = console.log;
